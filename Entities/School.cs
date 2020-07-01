@@ -23,23 +23,42 @@ namespace ProyectoEscuela.Entities
 
         #region METHODS
 
-        public void PrintCourses()
-        {
-            foreach (Course course in Courses)
+            public void PrintCourses()
             {
-                System.Console.WriteLine($"{course.Name}");
+                foreach (Course course in Courses)
+                {
+                    System.Console.WriteLine($"Course name: {course.Name} \nCourse ID: {course.UniqueId}");
+                }
             }
-        }
+
+            public void AddCourse(Course course)
+            {
+                if (Courses == null)
+                    Courses = new List<Course>();
+
+                Courses.Add(course);
+            }
+
+            public void RemoveCourseByName(String courseName)
+            {
+                
+                bool Predicate(Course course) => (course.Name == courseName);
+                
+                //Elimina todos los elementos que cumplan
+                //los requisitos marcados por el predicado.
+                Courses.RemoveAll(Predicate);
+            }
+
 
         #endregion
-    
+
         #region CONSTRUCTORS
 
-            /// <summary>
-            /// Instanciate the class School
-            /// </summary>
-            /// <param name="_name">The name of the school</param>
-            public School(String name) => Name = name;
+        /// <summary>
+        /// Instanciate the class School
+        /// </summary>
+        /// <param name="_name">The name of the school</param>
+        public School(String name) => Name = name;
 
             /// <summary>
             /// Instatiate the class School with only twho parameters
