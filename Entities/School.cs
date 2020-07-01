@@ -41,12 +41,25 @@ namespace ProyectoEscuela.Entities
 
             public void RemoveCourseByName(String courseName)
             {
-                
-                bool Predicate(Course course) => (course.Name == courseName);
-                
-                //Elimina todos los elementos que cumplan
+                //RemoveAll elimina todos los elementos que cumplan
                 //los requisitos marcados por el predicado.
-                Courses.RemoveAll(Predicate);
+
+                //Una forma es mediante predicado.
+                //bool Predicate(Course course) => (course.Name == courseName);
+                //Courses.RemoveAll(Predicate);
+
+                //Otra forma es mediante una expresión Lambda
+                Courses.RemoveAll((course) => course.Name == courseName);
+            }
+
+            public T Test<T>(Predicate<T> predicate, List<T> collection){
+                foreach (var item in collection)
+                {
+                    if(predicate(item))
+                    return item;
+                }
+                
+                return default(T);
             }
 
 

@@ -15,8 +15,15 @@ namespace ProyectoEscuela
 
             school.AddCourse(course1);
             school.AddCourse(course2);
+
+            //Testing how to use a Predicate in my own method.
+            //This function must return course1 name = 1ªA
+            WriteLine(school.Test((course) => course.UniqueId == course1.UniqueId, school.Courses).Name);
             school.RemoveCourseByName(course1.Name);
             
+            //Now course1 has be deleted so...
+            Course testResult = school.Test((course) => course.UniqueId == course1.UniqueId, school.Courses);
+            WriteLine(testResult == null ? "Course not found" : $"The course name is {testResult.Name}" );
 
             try
             {
