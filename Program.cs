@@ -1,4 +1,5 @@
 ﻿using System;
+using ProyectoEscuela.Entities;
 
 namespace ProyectoEscuela
 {
@@ -6,14 +7,28 @@ namespace ProyectoEscuela
     {
         static void Main(string[] args)
         {
-            Entities.School escuela = new Entities.School("Santa Marta");
-            escuela.Presentation();
-            escuela.Ring();
+            School school0 = new School("Santa Marta");
+            School school1 = new School("María Auxiliadora", "Santa Cruz de Tenerife");
+            School school2 = new School("Santa Cristina", "Las Palmas de Gran Canaria", 1612);
 
-            Entities.School school = new Entities.School("Santa Cristina", "Las Palmas de Gran Canaria", 1612);
-            Entities.School school2 = new Entities.School("María Auxiliadora", "Santa Cruz de Tenerife");
-
-            Console.WriteLine(school2.ToString());
+            try
+            {
+                school0.PrintCourses();
+            }
+            catch (NullReferenceException e)
+            {
+                
+                if (e.Source != null)
+                {
+                    Console.WriteLine("Error: There are not courses list in " + e.Source);
+                    Console.WriteLine("Please, before print the course list, create it.");
+                    Console.WriteLine("( ^_^)");
+                    return;
+                }
+                throw;
+            }
         }
     }
 }
+
+

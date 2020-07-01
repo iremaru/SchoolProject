@@ -22,20 +22,14 @@ namespace ProyectoEscuela.Entities
         #endregion
 
         #region METHODS
-            public void Ring()
-            {
-                Console.Beep(2000, 300);
-            }
 
-            public void Presentation()
+        public void PrintCourses()
+        {
+            foreach (Course course in Courses)
             {
-                Console.WriteLine("Bienvenidos a la escuela " + name);
+                System.Console.WriteLine($"{course.Name}");
             }
-
-            public override String ToString() {
-                
-                return base.ToString() + $"\nSchool name: {name}. \nSchool city: {City}";
-            }
+        }
 
         #endregion
     
