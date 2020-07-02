@@ -1,4 +1,4 @@
-namespace ProyectoEscuela.Entities
+namespace CoreSchool.Entities
 {
     public enum ShiftType
     {

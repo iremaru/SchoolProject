@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProyectoEscuela.Entities
+namespace CoreSchool.Entities
 {
     class School
     {

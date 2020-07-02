@@ -1,46 +1,25 @@
 ﻿using System;
-using ProyectoEscuela.Entities;
+using CoreSchool;
+using CoreSchool.Util;
 using static System.Console;
 
 
-namespace ProyectoEscuela
+namespace CoreSchool
 {
     class Program
     {
         static void Main(string[] args)
         {
-            School school = new School("Santa Cristina", "Las Palmas de Gran Canaria", 1612);
-            Course course1 = new Course("1ºA", ShiftType.Morning);
-            Course course2 = new Course("1ºB", ShiftType.Morning);
+            Util.Printer.Header("INICIO");
 
-            school.AddCourse(course1);
-            school.AddCourse(course2);
+            //At the start of the program
+            //we instantiate the School
+            SchoolEngine engine = new SchoolEngine();
+            //TODO: Mirar en el directorio si hay datos almacenados
+            //En cuyo caso se instanciaría copiando esos datos.
 
-            //Testing how to use a Predicate in my own method.
-            //This function must return course1 name = 1ªA
-            WriteLine(school.Test((course) => course.UniqueId == course1.UniqueId, school.Courses).Name);
-            school.RemoveCourseByName(course1.Name);
             
-            //Now course1 has be deleted so...
-            Course testResult = school.Test((course) => course.UniqueId == course1.UniqueId, school.Courses);
-            WriteLine(testResult == null ? "Course not found" : $"The course name is {testResult.Name}" );
-
-            try
-            {
-                school.PrintCourses();
-            }
-            catch (NullReferenceException e)
-            {
-                
-                if (e.Source != null)
-                {
-                    WriteLine("Error: There are not courses list in " + e.Source);
-                    WriteLine("Please, before print the course list, create it.");
-                    WriteLine("( ^_^)");
-                    return;
-                }
-                throw;
-            }
+            Util.Printer.Header("THIS IS THE EPIC AND AWESOME", "END FOR A EPIC AND AWESOME APP", 33);
         }
     }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace ProyectoEscuela.Entities
+namespace CoreSchool.Entities
 {
     public class Course
     {
