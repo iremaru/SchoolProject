@@ -1,3 +1,4 @@
+using System;
 using static System.Console;
 
 namespace CoreSchool.Util
@@ -11,6 +12,13 @@ namespace CoreSchool.Util
             const int PARAGRAPHWIDE = 55;
 
         #endregion
+        public static void WaitForUser()
+        {
+
+            WriteLine("Press ENTER when you are ready.");
+            ReadKey();
+            Clear();
+        }
 
         /// <summary>
         /// Print the title and the subtitle,

@@ -6,10 +6,10 @@ namespace CoreSchool.Entities
     {
         public String FirstName { get; set; }
         public String LastName { get; set; }
+        public DateTime HiredDate { get; set; }
         public TeacherPosition TeacherPosition { get; set; }
         public DirectivePosition DirectivePosition { get; set; }
 
-        public DateTime HiredDate { get; set; }
         public float Salary { get; private set; }
 
         #region CONSTRUCTOR
