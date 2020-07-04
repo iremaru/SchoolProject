@@ -2,14 +2,14 @@ using System;
 
 namespace CoreSchool.Entities
 {
-    public class Course
+    /// <summary>
+    /// A course is 
+    /// </summary>
+    public class SchoolGrade : Entitie
     {
         #region PROPERTIES
-            public String UniqueId { get; private set; }
-            public String Name { get; set; }
             public ShiftType Shift {get; set;}
-
-            //TODO max alumnos
+            public int maxStudents { get; set; }
             //TODO Tutor
 
         #endregion
@@ -20,10 +20,8 @@ namespace CoreSchool.Entities
 
         #region CONSTRUCTORS
             
-            public Course(String name, ShiftType shift)
+            public SchoolGrade(String name, ShiftType shift) : base (name)
             {
-                UniqueId = Guid.NewGuid().ToString();
-                Name = name;
                 Shift = shift;
             }
         #endregion

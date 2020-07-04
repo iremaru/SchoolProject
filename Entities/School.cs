@@ -17,7 +17,7 @@ namespace CoreSchool.Entities
             public int MyProperty { get; private set; }
             public SchoolTypes SchoolType { get; set; }
 
-            public List<Course> Courses {get; set;}
+            public List<SchoolGrade> Courses {get; set;}
 
         #endregion
 
@@ -25,16 +25,16 @@ namespace CoreSchool.Entities
 
             public void PrintCourses()
             {
-                foreach (Course course in Courses)
+                foreach (SchoolGrade course in Courses)
                 {
-                    System.Console.WriteLine($"Course name: {course.Name} \nCourse ID: {course.UniqueId}");
+                    System.Console.WriteLine($"Course name: {course.Title} \nCourse ID: {course.UniqueID}");
                 }
             }
 
-            public void AddCourse(Course course)
+            public void AddCourse(SchoolGrade course)
             {
                 if (Courses == null)
-                    Courses = new List<Course>();
+                    Courses = new List<SchoolGrade>();
 
                 Courses.Add(course);
             }
@@ -49,7 +49,7 @@ namespace CoreSchool.Entities
                 //Courses.RemoveAll(Predicate);
 
                 //Otra forma es mediante una expresión Lambda
-                Courses.RemoveAll((course) => course.Name == courseName);
+                Courses.RemoveAll((course) => course.Title == courseName);
             }
 
             public T Test<T>(Predicate<T> predicate, List<T> collection){

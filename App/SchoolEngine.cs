@@ -17,7 +17,8 @@ namespace CoreSchool
             {
                 //inicializamos la propiedad School
 
-                //E incluímos los cursos que oferta
+                //LoadCourses();
+                //LoadStudents();
             }
 
         #endregion
