@@ -2,7 +2,7 @@ namespace CoreSchool.Entities
 {
     public class TermPool
     {
-        Term[] terms;
+        Term[] terms = new Term[0];
 
         #region METHODS
             

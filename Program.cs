@@ -17,24 +17,30 @@ namespace CoreSchool
         }
 
         static void Test1(){
-            if(!Directory.Exists("Data"))
-            {
-                
-                Paragraph("Why do you like me too bad? ( T_T)");
-                Paragraph("Why did you delete my data directory?");
-                Paragraph("Why?");
-                Paragraph("Why?");
-                Paragraph("Why?");
-                Paragraph("( >___<)o ");
 
-                Directory.CreateDirectory("Data");
-            }
-
+            //First we manually enter the data
+            LocatedTextData[] data = new LocatedTextData[4]{
+                new LocatedTextData("001", "Hola", "Hello"),
+                new LocatedTextData("002", "Bienvenido", "Welcome"),
+                new LocatedTextData("003", "Un placer conocerle", "Nice to meet you"),
+                new LocatedTextData("004", "Adios", "Bye")
+            };
             
-            if (Locations.TextLocated.SaveData())
+            //Then we saved it
+            if (Locations.LocatedText.SaveLocatedTextData(data))
             {
                 Paragraph("Located text saved. Hurrah!!");
             }
+            
+            //And load it.
+            Locations.LocatedText.LoadData();
+
+            //Welcome poblated pool!
+            if (LocatedText.textLocatedPool.Length > 0)
+            {
+                Header(LocatedText.textLocatedPool[0].TextENG);
+            }
+            
         }
 
         static void Test2 ()

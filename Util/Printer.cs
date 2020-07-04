@@ -12,6 +12,7 @@ namespace CoreSchool.Util
             const int PARAGRAPHWIDE = 55;
 
         #endregion
+
         public static void WaitForUser()
         {
 
@@ -103,6 +104,19 @@ namespace CoreSchool.Util
         {
             WriteLine(BEAUTIFIEROUT + "".PadLeft(width, '=') + BEAUTIFIERIN);
         }
+
+        #region WARNING AND COMPLAINTS TO USERS
+            
+            public static void IfUserHasDeleteProjectData(String dataName)
+            {
+                Paragraph("Why do you like me too bad? ( T_T)");
+                Paragraph($"Why did you delete my {dataName}?");
+                Paragraph("Why?");
+                Paragraph("Why?");
+                Paragraph("Why?");
+                Paragraph("( >___<)o ");
+            }
+        #endregion
 
     }
 
