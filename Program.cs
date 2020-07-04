@@ -4,6 +4,7 @@ using CoreSchool;
 using CoreSchool.Locations;
 using CoreSchool.Util;
 using static CoreSchool.Util.Printer;
+using System.IO;
 
 
 namespace CoreSchool
@@ -16,8 +17,24 @@ namespace CoreSchool
         }
 
         static void Test1(){
+            if(!Directory.Exists("Data"))
+            {
+                
+                Paragraph("Why do you like me too bad? ( T_T)");
+                Paragraph("Why did you delete my data directory?");
+                Paragraph("Why?");
+                Paragraph("Why?");
+                Paragraph("Why?");
+                Paragraph("( >___<)o ");
+
+                Directory.CreateDirectory("Data");
+            }
+
             
-            Locations.TextLocated.SaveData();
+            if (Locations.TextLocated.SaveData())
+            {
+                Paragraph("Located text saved. Hurrah!!");
+            }
         }
 
         static void Test2 ()
