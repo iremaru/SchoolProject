@@ -13,32 +13,26 @@ namespace CoreSchool
     {
         static void Main(string[] args)
         {
+            SchoolEngine engine = new SchoolEngine();
+            engine.InitializeSchool();
+
+            Header("IDIOMA || LANGUAGE");
+            Paragraph("Press \"E\" to set ENGLISH.");
+            Paragraph("Pulsa \"Ñ\" para seleccionar ESPAÑOL");
+            SetLanguage(WaitForUserInput());
+
             Test1();
         }
 
         static void Test1(){
-
-            //First we manually enter the data
-            LocatedTextData[] data = new LocatedTextData[4]{
-                new LocatedTextData("001", "Hola", "Hello"),
-                new LocatedTextData("002", "Bienvenido", "Welcome"),
-                new LocatedTextData("003", "Un placer conocerle", "Nice to meet you"),
-                new LocatedTextData("004", "Adios", "Bye")
-            };
             
-            //Then we saved it
-            if (Locations.LocatedText.SaveLocatedTextData(data))
-            {
-                Paragraph("Located text saved. Hurrah!!");
-            }
-            
-            //And load it.
-            Locations.LocatedText.LoadData();
+            //Load that up!
+            //Locations.LocatedDataPersistence.LoadData();
 
             //Welcome poblated pool!
             if (LocatedText.textLocatedPool.Length > 0)
             {
-                Header(LocatedText.textLocatedPool[0].TextENG);
+                Header(Translate("002").ToUpper());
             }
             
         }

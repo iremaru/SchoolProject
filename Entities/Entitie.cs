@@ -7,9 +7,9 @@ namespace CoreSchool.Entities
         public String Title { get; set; }
         public Guid UniqueID { get; set; }
 
-        public Entitie(string name = "NoName")
+        public Entitie(string locatedText = "ENT-Tit")
         {
-            Title = name;
+            Title = locatedText;
             UniqueID = Guid.NewGuid();
         }
 

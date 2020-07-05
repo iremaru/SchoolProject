@@ -9,13 +9,16 @@ namespace CoreSchool.Locations
 {
     public static class LocatedDataPersistence
     {
+        //PATH
         const string DATADIRECTORY = "Data";
         const string FILENAME ="LocatedText.xml";
-        const string XMLROOTNAME ="TextLocatedPool";
-        const string XMLDATANAME = "TextLocated";
-        const string XMLDATAKEY = "Key";
-        const string XMLDATALANG1 = "ES";
-        const string XMLDATALANG2 = "ENG";
+        
+        //XML TREE
+        public const string XMLROOTNAME ="TextLocatedPool";
+        public const string XMLDATANAME = "TextLocated";
+        public const string XMLDATAKEY = "Key";
+        public const string XMLDATALANG1 = "ES";
+        public const string XMLDATALANG2 = "ENG";
         
 
         

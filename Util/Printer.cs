@@ -1,11 +1,14 @@
 using System;
 using static System.Console;
+using static CoreSchool.Locations.LocatedDataPersistence;
+using static CoreSchool.Locations.LocatedText;
 
 namespace CoreSchool.Util
 {
     public static class Printer
     {
         #region PROPERTIES
+            static public string Language { get; set; }
             const string BEAUTIFIERIN = "*+_";
             const string BEAUTIFIEROUT = "_+*";
             const string MARGINLEFT = "    ";
@@ -17,8 +20,14 @@ namespace CoreSchool.Util
         {
 
             WriteLine("Press ENTER when you are ready.");
-            ReadKey();
+            WaitForUserInput();
+        }
+
+        public static string WaitForUserInput()
+        {
+            string key = ReadKey().KeyChar.ToString();
             Clear();
+            return key;
         }
 
         /// <summary>
@@ -103,6 +112,27 @@ namespace CoreSchool.Util
         public static void LineBottom(int width = PARAGRAPHWIDE)
         {
             WriteLine(BEAUTIFIEROUT + "".PadLeft(width, '=') + BEAUTIFIERIN);
+        }
+
+        public static void SetLanguage(string key)
+        {
+            
+            switch (key.ToUpper())
+            {
+                case "E":
+                    Language = XMLDATALANG2;
+                    break;
+                case "Ñ":
+                    Language = XMLDATALANG1;
+                    break;
+                default:
+                    Language = XMLDATALANG2;
+                    break;
+            }
+        }
+        public static string Translate(string key)
+        {
+            return PickLocatedText(key, Language);
         }
 
         #region WARNING AND COMPLAINTS TO USERS

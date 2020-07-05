@@ -15,7 +15,11 @@ namespace CoreSchool
             //Method to initialice School
             public void InitializeSchool()
             {
-                //inicializamos la propiedad School
+                //First of all, we initialize the localized texts.
+                Locations.LocatedDataPersistence.LoadData();
+
+                //Then we instantialize the School (Wii! School exist!)
+                School = new School("Santa Marta");
 
                 //LoadCourses();
                 //LoadStudents();
