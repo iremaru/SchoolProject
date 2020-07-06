@@ -4,6 +4,9 @@
     <TextLocated ES="Bienvenido" ENG="Welcome">002</TextLocated>
     <TextLocated ES="Un placer conocerle" ENG="Nice to meet you">003</TextLocated>
     <TextLocated ES="Adios" ENG="Bye">004</TextLocated>
+    <!--APP WARNING TO USER-->
+    <TextLocated ES="Es necesario que haya más de 2 respuestas para poder guardar la pregunta." ENG="There needs to be more than two answers in order to save the question">WAR-MKEval-NotEnoughtAnswers</TextLocated>
+    <TextLocated ES="Debe haber al menos una respuesta correcta y una incorrecta." ENG="There must be at least one corret and one incorrect answer">WAR-MKEval-CorrectOrIncorrectAnswersAreMissing</TextLocated>
     <!--ENTITIES TITLES-->
     <TextLocated ES="Ente" ENG="Entitie">ENT-Tit</TextLocated>
     <TextLocated ES="Docente" ENG="Teacher">ENT-Tit-Teacher</TextLocated>

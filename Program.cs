@@ -15,33 +15,25 @@ namespace CoreSchool
         {
             SchoolEngine engine = new SchoolEngine();
             engine.InitializeSchool();
+            Console.WriteLine((0/1).ToString());
 
-            Header("IDIOMA || LANGUAGE");
-            Paragraph("Press \"E\" to set ENGLISH.");
-            Paragraph("Pulsa \"Ñ\" para seleccionar ESPAÑOL");
-            SetLanguage(WaitForUserInput());
 
             Test1();
         }
 
         static void Test1(){
             
-            //Load that up!
-            //Locations.LocatedDataPersistence.LoadData();
-
-            //Welcome poblated pool!
-            if (LocatedText.textLocatedPool.Length > 0)
-            {
-                Header(Translate("002").ToUpper());
-            }
+            
             
         }
 
         static void Test2 ()
         {
             //SCREEN 0
-            Header("WELCOME");
-            WaitForUser();
+            Header("IDIOMA || LANGUAGE");
+            Paragraph("Press \"E\" to set ENGLISH.");
+            Paragraph("Pulsa \"Ñ\" para seleccionar ESPAÑOL");
+            SetLanguage(WaitForUserInput());
 
             //SCREEN 1
             Paragraph("Todai is:");
