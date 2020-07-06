@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Xml;
-using CoreSchool;
-using CoreSchool.Locations;
-using CoreSchool.Util;
 using static CoreSchool.Util.Printer;
-using System.IO;
+using CoreSchool.Entities.EvaluationSystem;
 
 
 namespace CoreSchool
@@ -15,15 +11,28 @@ namespace CoreSchool
         {
             SchoolEngine engine = new SchoolEngine();
             engine.InitializeSchool();
-            Console.WriteLine((0/1).ToString());
-
 
             Test1();
         }
 
         static void Test1(){
             
+            Locations.LocatedTextData statement = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-Statement", "¿De qué color es el caballo blanco de Santiago?", "Why did the chicken cross the road?");
+            Locations.LocatedTextData argumentA = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerA", "Rojo", "Because I call it.");
+            Locations.LocatedTextData argumentB = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerB", "Amarillo", "I don't know");
+            Locations.LocatedTextData argumentC = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerC", "Blanco", "Because it wants to get on the other side.");
             
+            Answer[] answers = {
+                new Answer(argumentA),
+                new Answer(argumentB),
+                new Answer(argumentC, true)
+            };
+
+            Question[] questions = {
+                new Question(statement, answers, Level.Low, Level.Low ),
+            };
+
+            Paragraph(questions[0].Value.ToString());
             
         }
 

@@ -17,7 +17,7 @@ namespace CoreSchool.Entities.EvaluationSystem
         
         /// <summary>
         /// How difficult is this question?
-        /// Null: The statement is self-expalantory
+        /// Null: The statement answers itself
         /// Low: All the answers are absurd except the correct one
         /// Middle: Is a average question
         /// Normal: The student has to think to find the most optimal solution.
@@ -45,15 +45,26 @@ namespace CoreSchool.Entities.EvaluationSystem
         
         public Question(LocatedTextData statement, Answer[] answers, Level complexity, Level relevance)
         {
-            if(!IsAnswersValid(answers)) return;
+            if(!IsAnswersValid(answers)) 
+            {
+                return;
+            }
 
             Statement = statement;
             Answers = answers;
             QuestionComplexity = complexity;
             QuestionRelevance = relevance;
+            Value = CalculateValue(complexity, relevance);
 
         }
 
+        /// <summary>
+        /// Check if the answer group meets the rules:
+        /// 1. They are three or more.
+        /// 2. There are a correct and a incorrect answer.
+        /// </summary>
+        /// <param name="answers">The answer group. If null, use the prop Answers of the instance.</param>
+        /// <returns>bool</returns>
         public bool IsAnswersValid(Answer[] answers = null)
         {
             if (answers == null)
@@ -69,7 +80,7 @@ namespace CoreSchool.Entities.EvaluationSystem
             }
 
             //There must be at least one correct question and, at least, one incorrect question.
-            if (GetAnswerByVeracity(true) != null && GetAnswerByVeracity(false) != null)
+            if (GetAnswerByVeracity(true, answers) == null || GetAnswerByVeracity(false, answers) == null)
             {
                 Paragraph(Translate("WAR-MKEval-CorrectOrIncorrectAnswersAreMissing"));
                 return false;

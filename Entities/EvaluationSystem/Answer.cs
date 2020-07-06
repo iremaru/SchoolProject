@@ -6,5 +6,11 @@ namespace CoreSchool.Entities.EvaluationSystem
     {
         public LocatedTextData Argument { get; set; }
         public bool IsTrue { get; set; }
+
+        public Answer(LocatedTextData argument, bool isTrue = false)
+        {
+            Argument = argument;
+            IsTrue = isTrue;
+        }
     }
 }
