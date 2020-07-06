@@ -1,6 +1,6 @@
 using CoreSchool.Locations;
 
-namespace CoreSchool.Entities.EvaluationSystem
+namespace CoreSchool.Entities.Evaluation
 {
     public class Answer
     {

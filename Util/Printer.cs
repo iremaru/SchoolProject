@@ -8,7 +8,7 @@ namespace CoreSchool.Util
     public static class Printer
     {
         #region PROPERTIES
-            static public string Language { get; set; }
+            static public string Language { get; set; } = XMLDATALANG2;
             const string BEAUTIFIERIN = "*+_";
             const string BEAUTIFIEROUT = "_+*";
             const string MARGINLEFT = "    ";

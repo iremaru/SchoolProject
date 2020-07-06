@@ -1,7 +1,8 @@
 ﻿using System;
 using static CoreSchool.Util.Printer;
-using CoreSchool.Entities.EvaluationSystem;
-
+using CoreSchool.Entities.Evaluation;
+using CoreSchool.Entities;
+using System.Collections.Generic;
 
 namespace CoreSchool
 {
@@ -16,6 +17,8 @@ namespace CoreSchool
         }
 
         static void Test1(){
+
+            
             
             Locations.LocatedTextData statement = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-Statement", "¿De qué color es el caballo blanco de Santiago?", "Why did the chicken cross the road?");
             Locations.LocatedTextData argumentA = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerA", "Rojo", "Because I call it.");
@@ -28,11 +31,25 @@ namespace CoreSchool
                 new Answer(argumentC, true)
             };
 
-            Question[] questions = {
+            List<Question> questions = new List<Question>() 
+            {
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
+                new Question(statement, answers, Level.Low, Level.Low ),
                 new Question(statement, answers, Level.Low, Level.Low ),
             };
 
-            Paragraph(questions[0].Value.ToString());
+            Teacher ProfeMaripi = new Teacher("Maria del Pino", "Santana", DateTime.Now);
+            
+            Exam exam = new Exam(questions, ProfeMaripi, 10, 8 );
+
+            Paragraph(exam.CreatedBy.FirstName);
             
         }
 

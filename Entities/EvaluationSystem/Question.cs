@@ -1,7 +1,7 @@
 using CoreSchool.Locations;
 using static CoreSchool.Util.Printer;
 
-namespace CoreSchool.Entities.EvaluationSystem
+namespace CoreSchool.Entities.Evaluation
 {
     public class Question
     {

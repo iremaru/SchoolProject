@@ -7,6 +7,8 @@
     <!--APP WARNING TO USER-->
     <TextLocated ES="Es necesario que haya más de 2 respuestas para poder guardar la pregunta." ENG="There needs to be more than two answers in order to save the question">WAR-MKEval-NotEnoughtAnswers</TextLocated>
     <TextLocated ES="Debe haber al menos una respuesta correcta y una incorrecta." ENG="There must be at least one corret and one incorrect answer">WAR-MKEval-CorrectOrIncorrectAnswersAreMissing</TextLocated>
+    <TextLocated ES="No puede haber menos preguntas disponibles que el número de preguntas por examen." ENG="There must be more questions available than the number of questions per exam">WAR-MKEval-FewerAvaliableQuestionsThanMinimunQuestions</TextLocated>
+    <TextLocated ES="Demasiado pocas preguntas." ENG="Too few questions">WAR-MKEval-TooFewQuestions</TextLocated>
     <!--ENTITIES TITLES-->
     <TextLocated ES="Ente" ENG="Entitie">ENT-Tit</TextLocated>
     <TextLocated ES="Docente" ENG="Teacher">ENT-Tit-Teacher</TextLocated>
