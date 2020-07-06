@@ -18,7 +18,7 @@ The evaluation system must have:
 1. Teacher - Ability to create exams.
 2. Teacher - Ability to deprecate exams.
 3. Teacher - Ability to see their exams taken by their students and their scores.
-4. Teacher - Ability to see the sttats of them exams: Success rate for each question and average mark for each exam.
+4. Teacher - Ability to see the stats of them exams: Success rate for each question and average mark for each exam.
 3. Student - Ability to take exams.
 4. Student - Ability to see their taken exams.
 3. Record of exams done.
