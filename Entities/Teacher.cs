@@ -14,7 +14,7 @@ namespace CoreSchool.Entities
 
         #region CONSTRUCTOR
             
-            public Teacher(String firstName, String lastName, DateTime hiredDate) : base(locatedText: "ENT-Tit-Teacher")
+            public Teacher(String firstName, String lastName, DateTime hiredDate) : base(locatedTextKey: "ENT-Tit-Teacher")
             {
                 FirstName = firstName;
                 LastName = lastName;

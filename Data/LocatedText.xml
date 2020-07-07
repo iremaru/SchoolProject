@@ -7,4 +7,8 @@
     <!--ENTITIES TITLES-->
     <TextLocated ES="Ente" ENG="Entitie">ENT-Tit</TextLocated>
     <TextLocated ES="Docente" ENG="Teacher">ENT-Tit-Teacher</TextLocated>
+    <TextLocated ES="Estudiante" ENG="Student">ENT-Tit-Student</TextLocated>
+    <TextLocated ES="Periodo" ENG="Term">ENT-Tit-Term</TextLocated>
+    <TextLocated ES="Curso" ENG="Grade">ENT-Tit-SchoolGrade</TextLocated>
+    <TextLocated ES="Academia" ENG="School">ENT-Tit-School</TextLocated>
 </TextLocatedPool>

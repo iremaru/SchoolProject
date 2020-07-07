@@ -3,23 +3,18 @@ using System.Collections.Generic;
 
 namespace CoreSchool.Entities
 {
-    class School
+    class School : Entitie
     {
         #region ATTRIBUTES
-            String name;
-            public String Name
-            { 
-                get{ return name + " Academy";} 
-                set{ name = value.ToLower();} 
-            }
+            public String Name {get; set;}
             public int FoundationYear { get; set; }
             public String City { get; set; }
-            public int MyProperty { get; private set; }
-            public SchoolTypes SchoolType { get; set; }
+            public SchoolType SchoolType { get; set; }
 
             public List<SchoolGrade> Courses {get; set;}
 
         #endregion
+
 
         #region METHODS
 
@@ -41,14 +36,6 @@ namespace CoreSchool.Entities
 
             public void RemoveCourseByName(String courseName)
             {
-                //RemoveAll elimina todos los elementos que cumplan
-                //los requisitos marcados por el predicado.
-
-                //Una forma es mediante predicado.
-                //bool Predicate(Course course) => (course.Name == courseName);
-                //Courses.RemoveAll(Predicate);
-
-                //Otra forma es mediante una expresión Lambda
                 Courses.RemoveAll((course) => course.Title == courseName);
             }
 
@@ -67,11 +54,11 @@ namespace CoreSchool.Entities
 
         #region CONSTRUCTORS
 
-        /// <summary>
+            /// <summary>
         /// Instanciate the class School
         /// </summary>
         /// <param name="_name">The name of the school</param>
-        public School(String name) => Name = name;
+            public School(String name) => Name = name;
 
             /// <summary>
             /// Instatiate the class School with only twho parameters
@@ -87,11 +74,13 @@ namespace CoreSchool.Entities
             /// <param name="name">The name of the school</param>
             /// <param name="city">The city where the school is stablished</param>
             /// <param name="foundationYear">The year the school was founded</param>
-            public School(String name, String city, int foundationYear)
+            /// <param name="SchoolType">What type of education does thies school offer?</param>
+            public School(string name, int foundationYear, string city, SchoolType schoolType) : base("ENT-Tit-School")
             {
-                this.name = name;
-                City = city + " city";
+                Name = name;
+                City = city;
                 FoundationYear = foundationYear;
+                SchoolType = schoolType;
             }
         
         #endregion
