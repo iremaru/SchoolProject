@@ -7,7 +7,7 @@ namespace CoreSchool.Entities
         public DateTime OpeningDate { get; set; }
         public DateTime ClosingDate { get; set; }
 
-        public Term(DateTime openingDate, DateTime closingDate) : base(locatedText: "Term ")
+        public Term(DateTime openingDate, DateTime closingDate) : base(locatedTextKey: "ENT-Tit-Term")
         {
             OpeningDate = openingDate;
             ClosingDate = closingDate;

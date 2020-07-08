@@ -1,15 +1,23 @@
 using System;
+using CoreSchool.Locations;
 
 namespace CoreSchool.Entities
 {
-    public class Entitie
+    public abstract class Entitie
     {
-        public String Title { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Title { get; set; }
         public Guid UniqueID { get; set; }
 
-        public Entitie(string locatedText = "ENT-Tit")
+        /// <summary>
+        /// Contain the base properties of all classes that inherit from it.
+        /// </summary>
+        /// <param name="locatedTextKey">The key of the locatedTextData object that stores the class title </param>
+        public Entitie(string locatedTextKey = "ENT-Tit")
         {
-            Title = locatedText;
+            Title = locatedTextKey;
             UniqueID = Guid.NewGuid();
         }
 
