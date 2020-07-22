@@ -20,37 +20,6 @@ namespace CoreSchool
 
             
             
-            Locations.LocatedTextData statement = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-Statement", "¿De qué color es el caballo blanco de Santiago?", "Why did the chicken cross the road?");
-            Locations.LocatedTextData argumentA = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerA", "Rojo", "Because I call it.");
-            Locations.LocatedTextData argumentB = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerB", "Amarillo", "I don't know");
-            Locations.LocatedTextData argumentC = new Locations.LocatedTextData("TEST-EVAL-StandarQuestion-AnswerC", "Blanco", "Because it wants to get on the other side.");
-            
-            Answer[] answers = {
-                new Answer(argumentA),
-                new Answer(argumentB),
-                new Answer(argumentC, true)
-            };
-
-            List<Question> questions = new List<Question>() 
-            {
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-                new Question(statement, answers, Level.Low, Level.Low ),
-            };
-
-            Teacher ProfeMaripi = new Teacher("Maria del Pino", "Santana", DateTime.Now);
-            
-            Exam exam = new Exam(questions, ProfeMaripi, 10, 8 );
-
-            Paragraph(exam.CreatedBy.FirstName);
-            
         }
 
         static void Test2 ()

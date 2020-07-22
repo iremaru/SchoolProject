@@ -13,7 +13,7 @@ namespace CoreSchool.Entities.Evaluation
         /// <summary>
         /// All the answers with their truth value
         /// </summary>
-        public Answer[] Answers { get; set; }
+        public Answer[] Answers { get; set; } = new Answer[0];
         
         /// <summary>
         /// How difficult is this question?

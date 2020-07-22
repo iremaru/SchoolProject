@@ -26,7 +26,7 @@ namespace CoreSchool.Locations
             public static bool LoadData()
             {
                 XDocument doc = XDocument.Load($"{DATADIRECTORY}\\{FILENAME}");
-                textLocatedPool = doc.Descendants(XMLROOTNAME)
+                LocatedTextPool = doc.Descendants(XMLROOTNAME)
                                         .Elements()
                                         .Select(node => 
                                             new LocatedTextData(

@@ -6,18 +6,18 @@ namespace CoreSchool.Locations
 {
     public class LocatedText
     {
-        //public static LocatedTextData[] textLocatedPool = new LocatedTextData[0];
-        public static LocatedTextData[] textLocatedPool {get; set;}
+        public static LocatedTextData[] LocatedTextPool = new LocatedTextData[0];
+        //public static LocatedTextData[] LocatedTextPool {get; set;} 
         
         #region METHODS
             public bool SaveData(){
 
-                return SaveLocatedTextData(textLocatedPool);
+                return SaveLocatedTextData(LocatedTextPool);
             }
         
             public static string PickLocatedText(string key, string langCode)
             {
-                foreach (LocatedTextData item in textLocatedPool)
+                foreach (LocatedTextData item in LocatedTextPool)
                 {
                     if(item.Key == key)
                     {
